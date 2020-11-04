@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Farm - Add Solar Panel</title>
+</head>
+<body>
+
+    <h1>Solar Farm</h1>
+
+    <h2>Add Solar Panel</h2>
+
+    <div th:errors="${panel.*}"></div>
+
+    <form method="post" th:object="${panel}">
+
+        <div>
+            <label>Section</label>
+            <input type="text" th:field="*{section}">
+            <div th:if="${#fields.hasErrors('section')}" th:errors="*{section}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <label>Row</label>
+            <input type="number" th:field="*{row}" min="1" th:max="${maxRowColumn}">
+            <div th:errors="*{row}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <label>Column</label>
+            <input type="number" th:field="*{column}" min="1" th:max="${maxRowColumn}">
+            <div th:errors="*{column}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <label>Year Installed</label>
+            <input type="number" th:field="*{yearInstalled}" th:max="${maxInstallationYear}">
+            <div th:errors="*{yearInstalled}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <label>Material</label>
+            <input type="text" th:field="*{material}" th:max="${maxInstallationYear}">
+            <div th:errors="*{material}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <label>Is Tracking?</label>
+            <input type="text" th:field="*{tracking}">
+            <div th:errors="*{tracking}">
+                Err Message
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Add</button>
+            <a href="/solarpanels">Cancel</a>
+        </div>
+
+    </form>
+
+</body>
+</html>
