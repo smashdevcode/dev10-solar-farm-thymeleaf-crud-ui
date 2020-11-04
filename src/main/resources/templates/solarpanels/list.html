@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Solar Farm</h1>
+
+    <h2>Solar Panels</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Section</th>
+                <th>Row-Col</th>
+                <th>Year Installed</th>
+                <th>Material</th>
+                <th>Is Tracking?</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="panel: ${panels}">
+                <td th:text="${panel.section}">Section</td>
+                <td th:text="|${panel.row}-${panel.column}|"></td>
+                <td th:text="${panel.yearInstalled}"></td>
+                <td th:text="${panel.material}"></td>
+                <td th:text="${panel.tracking}"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
