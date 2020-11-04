@@ -1,0 +1,1 @@
+# dev10-solar-farm-thymeleaf-crud-ui
