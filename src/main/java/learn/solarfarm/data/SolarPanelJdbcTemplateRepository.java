@@ -54,6 +54,17 @@ public class SolarPanelJdbcTemplateRepository implements SolarPanelRepository {
     }
 
     @Override
+    public SolarPanel findById(int id) throws DataAccessException {
+        final String sql = String.format("select %s from solar_panel " +
+                "where solar_panel_id = ?;", SOLAR_PANEL_COLUMN_NAMES);
+        try {
+            return jdbcTemplate.queryForObject(sql, mapper, id);
+        } catch (EmptyResultDataAccessException ex) {
+            return null;
+        }
+    }
+
+    @Override
     public SolarPanel findByKey(SolarPanelKey key) throws DataAccessException {
         final String sql = String.format("select %s from solar_panel " +
                 "where section = ? and `row` = ? and `column` = ?;", SOLAR_PANEL_COLUMN_NAMES);

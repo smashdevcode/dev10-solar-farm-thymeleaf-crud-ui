@@ -56,7 +56,7 @@
 
         <div>
             <label>Is Tracking?</label>
-            <input type="text" th:field="*{tracking}">
+            <input type="checkbox" th:field="*{tracking}">
             <div th:if="${#fields.hasErrors('tracking')}" th:errors="*{tracking}">
                 Err Message
             </div>

@@ -25,12 +25,15 @@
         </thead>
         <tbody>
             <tr th:each="panel: ${panels}">
-                <td th:text="${panel.section}">Section</td>
+                <td th:text="${panel.section}"></td>
                 <td th:text="|${panel.row}-${panel.column}|"></td>
                 <td th:text="${panel.yearInstalled}"></td>
                 <td th:text="${panel.material}"></td>
                 <td th:text="${panel.tracking}"></td>
-                <td></td>
+                <td>
+                    <a th:href="@{/solarpanels/update/{id}(id=${panel.id})}">Edit</a>
+                    <a th:href="@{/solarpanels/delete/{id}(id=${panel.id})}">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>

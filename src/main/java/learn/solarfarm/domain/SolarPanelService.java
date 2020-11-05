@@ -42,6 +42,10 @@ public class SolarPanelService {
         return repository.findBySection(section);
     }
 
+    public SolarPanel findById(int id) throws DataAccessException {
+        return repository.findById(id);
+    }
+
     public SolarPanel findByKey(SolarPanelKey key) throws DataAccessException {
         return repository.findByKey(key);
     }

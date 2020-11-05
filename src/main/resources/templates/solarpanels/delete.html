@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Farm - Delete Solar Panel</title>
+</head>
+<body>
+
+<h1>Solar Farm</h1>
+
+<h2>Delete Solar Panel</h2>
+
+<p>Delete the following panel?</p>
+
+<ul>
+    <li>Section: <span th:text="${panel.section}">Section</span></li>
+    <li>Row: <span th:text="${panel.row}">1</span></li>
+    <li>Column: <span th:text="${panel.column}">1</span></li>
+</ul>
+
+<form method="post">
+
+    <button type="submit">Delete</button>
+
+    <p><a href="/solarpanels">Cancel</a></p>
+
+</form>
+
+</body>
+</html>

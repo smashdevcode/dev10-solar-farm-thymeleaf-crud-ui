@@ -69,6 +69,12 @@ public class SolarPanelJdbcRepository implements SolarPanelRepository {
     }
 
     @Override
+    public SolarPanel findById(int id) throws DataAccessException {
+        // TODO
+        return null;
+    }
+
+    @Override
     public SolarPanel findByKey(SolarPanelKey key) throws DataAccessException {
         final String sql = String.format("select %s from solar_panel " +
                 "where section = ? and `row` = ? and `column` = ?;", SOLAR_PANEL_COLUMN_NAMES);
